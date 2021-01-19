@@ -3,10 +3,10 @@ import shutil
 import subprocess
 from pathlib import Path
 
-import django_ynh
+import django2ynh
 
 
-PACKAGE_ROOT = Path(django_ynh.__file__).parent.parent
+PACKAGE_ROOT = Path(django2ynh.__file__).parent.parent
 
 
 def assert_file_contains_string(file_path, string):
@@ -22,7 +22,7 @@ def test_version(package_root=None, version=None):
         package_root = PACKAGE_ROOT
 
     if version is None:
-        version = django_ynh.__version__
+        version = django2ynh.__version__
 
     if 'dev' not in version and 'rc' not in version:
         version_string = f'v{version}'
@@ -32,7 +32,7 @@ def test_version(package_root=None, version=None):
     assert_file_contains_string(file_path=Path(package_root, 'pyproject.toml'), string=f'version = "{version}"')
     assert_file_contains_string(file_path=Path(package_root, 'manifest.json'), string=f'"version": "{version}~ynh')
     assert_file_contains_string(
-        file_path=Path(package_root, 'scripts', '_common.sh'), string=f'"django_ynh[ynh]=={version}"'
+        file_path=Path(package_root, 'scripts', '_common.sh'), string=f'"django2ynh[ynh]=={version}"'
     )
 
 

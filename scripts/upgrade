@@ -80,7 +80,7 @@ ynh_system_user_create --username="$app" --home_dir="$final_path" --use_shell
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..."
 
-ynh_add_systemd_config --service="$app" --template="django_ynh.service"
+ynh_add_systemd_config --service="$app" --template="django2ynh.service"
 
 #=================================================
 # UPGRADE VENV
@@ -203,9 +203,9 @@ chown -R "$app" "$public_path"
 chown -R "$app" "$final_path"
 
 #=================================================
-# Start django_ynh via systemd
+# Start django2ynh via systemd
 #=================================================
-ynh_script_progression --message="Starting django_ynh's services..." --weight=5
+ynh_script_progression --message="Starting django2ynh's services..." --weight=5
 
 ynh_systemd_action --service_name="$app" --action="start"
 

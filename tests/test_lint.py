@@ -2,10 +2,10 @@ import shutil
 import subprocess
 from pathlib import Path
 
-import django_ynh
+import django2ynh
 
 
-BASE_PATH = Path(django_ynh.__file__).parent.parent
+BASE_PATH = Path(django2ynh.__file__).parent.parent
 
 
 def test_lint():

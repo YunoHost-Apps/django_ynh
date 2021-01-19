@@ -18,7 +18,7 @@ app=$YNH_APP_INSTANCE_NAME
 public_path=/var/www/$app
 final_path=/opt/yunohost/$app
 log_path=/var/log/$app
-log_file="${log_path}/django_ynh.log"
+log_file="${log_path}/django2ynh.log"
 
 #=================================================
 # COMMON VARIABLES
@@ -28,7 +28,7 @@ log_file="${log_path}/django_ynh.log"
 pkg_dependencies="build-essential python3-dev python3-pip python3-venv git postgresql postgresql-contrib"
 
 # To install/upgrade this project via pip:
-pip_install_string="django_ynh[ynh]==0.1.5"
+pip_install_string="django2ynh[ynh]==0.2.0rc0"
 
 #=================================================
 # Redis HELPERS

@@ -120,7 +120,7 @@ chown -R "$app" "$final_path"
 #=================================================
 # copy config files
 # ================================================
-ynh_script_progression --message="Create django_ynh configuration file..."
+ynh_script_progression --message="Create django2ynh configuration file..."
 
 gunicorn_conf="$final_path/gunicorn.conf.py"
 cp "../conf/gunicorn.conf.py" "$gunicorn_conf"
@@ -216,7 +216,7 @@ chown -R "$app" "$final_path"
 ynh_script_progression --message="Configuring a systemd service..."
 
 # https://github.com/YunoHost/yunohost/blob/dev/data/helpers.d/systemd
-ynh_add_systemd_config --service="$app" --template="django_ynh.service"
+ynh_add_systemd_config --service="$app" --template="django2ynh.service"
 
 #=================================================
 # SETUP SSOWAT
@@ -232,9 +232,9 @@ then
 fi
 
 #=================================================
-# Start django_ynh via systemd
+# Start django2ynh via systemd
 #=================================================
-ynh_script_progression --message="Starting django_ynh's services..." --weight=5
+ynh_script_progression --message="Starting django2ynh's services..." --weight=5
 
 ynh_systemd_action --service_name="$app" --action="start"
 

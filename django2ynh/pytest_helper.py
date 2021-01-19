@@ -2,8 +2,8 @@ import os
 import sys
 from pathlib import Path
 
-from django_ynh.local_test import create_local_test
-from django_ynh.path_utils import assert_is_dir, assert_is_file
+from django2ynh.local_test import create_local_test
+from django2ynh.path_utils import assert_is_dir, assert_is_file
 
 
 def run_pytest(django_settings_path, destination):

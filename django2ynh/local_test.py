@@ -8,8 +8,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-from django_ynh.path_utils import assert_is_dir, assert_is_file
-from django_ynh.test_utils import generate_basic_auth
+from django2ynh.path_utils import assert_is_dir, assert_is_file
+from django2ynh.test_utils import generate_basic_auth
 
 
 def verbose_check_call(command, verbose=True, **kwargs):
@@ -83,7 +83,7 @@ def create_local_test(django_settings_path, destination, runserver=False):
         'django.db.backends.postgresql': 'django.db.backends.sqlite3',
         "'NAME': '__APP__',": f"'NAME': '{destination / 'test_db.sqlite'}',",
         'django_redis.cache.RedisCache': 'django.core.cache.backends.dummy.DummyCache',
-        # Just use the default logging setup from django_ynh project:
+        # Just use the default logging setup from django2ynh project:
         'LOGGING = {': 'HACKED_DEACTIVATED_LOGGING = {',
     }
 

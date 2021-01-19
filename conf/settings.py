@@ -13,8 +13,8 @@
 """
 from pathlib import Path as __Path
 
-from django_ynh.base_settings import *  # noqa
-from django_ynh.secret_key import get_or_create_secret as __get_or_create_secret
+from django2ynh.base_settings import *  # noqa
+from django2ynh.secret_key import get_or_create_secret as __get_or_create_secret
 
 
 DEBUG = True  # This is only the DEMO app ;) But should never be on in production!
@@ -28,7 +28,7 @@ assert FINAL_HOME_PATH.is_dir(), f'Directory not exists: {FINAL_HOME_PATH}'
 FINAL_WWW_PATH = __Path('__FINAL_WWW_PATH__')  # /var/www/$app
 assert FINAL_WWW_PATH.is_dir(), f'Directory not exists: {FINAL_WWW_PATH}'
 
-LOG_FILE = __Path('__LOG_FILE__')  # /var/log/$app/django_ynh.log
+LOG_FILE = __Path('__LOG_FILE__')  # /var/log/$app/django2ynh.log
 assert LOG_FILE.is_file(), f'File not exists: {LOG_FILE}'
 
 PATH_URL = '__PATH_URL__'  # $YNH_APP_ARG_PATH
@@ -84,7 +84,7 @@ CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
         'LOCATION': 'redis://127.0.0.1:6379/__REDIS_DB__',
-        # If redis is running on same host as django_ynh, you might
+        # If redis is running on same host as django2ynh, you might
         # want to use unix sockets instead:
         # 'LOCATION': 'unix:///var/run/redis/redis.sock?db=1',
         'OPTIONS': {
@@ -141,7 +141,7 @@ LOGGING = {
         'django': {'handlers': ['log_file', 'mail_admins'], 'level': 'INFO', 'propagate': False},
         'axes': {'handlers': ['log_file', 'mail_admins'], 'level': 'WARNING', 'propagate': False},
         'django_tools': {'handlers': ['log_file', 'mail_admins'], 'level': 'INFO', 'propagate': False},
-        'django_ynh': {'handlers': ['log_file', 'mail_admins'], 'level': 'INFO', 'propagate': False},
+        'django2ynh': {'handlers': ['log_file', 'mail_admins'], 'level': 'INFO', 'propagate': False},
     },
 }
 
