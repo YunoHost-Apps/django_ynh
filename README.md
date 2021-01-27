@@ -1,17 +1,15 @@
 # django_ynh
 
+[![Integration level](https://dash.yunohost.org/integration/django_ynh.svg)](https://dash.yunohost.org/appci/app/django_ynh) ![](https://ci-apps.yunohost.org/ci/badges/django_ynh.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/django_ynh.maintain.svg)  
+[![Install django_ynh with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=django_ynh)
 
-Glue code to package django projects as yunohost apps.
+
+Glue code to package django projects as YunoHost apps.
 
 This repository is:
 
 * The Python package [django-ynh](https://pypi.org/project/django-ynh/) with helpers for integrate a Django project as YunoHost package
 * A example [YunoHost Application](https://install-app.yunohost.org/?app=django_ynh) that can be installed
-
-
-[![Integration level](https://dash.yunohost.org/integration/django_ynh.svg)](https://dash.yunohost.org/appci/app/django_ynh) ![](https://ci-apps.yunohost.org/ci/badges/django_ynh.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/django_ynh.maintain.svg)
-[![Install django_ynh with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=django_ynh)
-
 
 Pull requests welcome ;)
 
